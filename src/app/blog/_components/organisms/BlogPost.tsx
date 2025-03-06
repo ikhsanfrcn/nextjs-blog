@@ -37,7 +37,7 @@ export const BlogPost = ({ data, currentUrl, shareLinks }: BlogPostProps) => (
       </div>
     </section>
     {/* AUTHOR PROFILE */}
-    <div className="py-20">
+    <div className="container">
       <h4 className="text-gray-500 text-3xl">ABOUT THE AUTHOR</h4>
       <AuthorProfile
         name={data.author.name}

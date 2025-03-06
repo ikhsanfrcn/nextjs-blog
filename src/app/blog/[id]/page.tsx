@@ -18,7 +18,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
   const { id } = await params; // Menunggu Promise params selesai
   const data = await getBlogData(id);
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://nuntium-phi.vercel.app";
   const currentUrl = `${siteUrl}/blog/${id}`;
 
   const shareLinks = {
