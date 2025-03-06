@@ -1,5 +1,4 @@
 import { iBlog } from "@/type";
-import { MetaTags } from "../_components/atoms/MetaTags";
 import { BlogPost } from "../_components/organisms/BlogPost";
 
 async function getBlogData(id: string): Promise<iBlog> {
@@ -14,8 +13,40 @@ async function getBlogData(id: string): Promise<iBlog> {
   return res.json();
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const data = await getBlogData(id);
+
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://nuntium-phi.vercel.app";
+  const currentUrl = `${siteUrl}/blog/${id}`;
+
+  return {
+    title: data.title || "Blog",
+    description: data.content?.substring(0, 150) || "No description available",
+    openGraph: {
+      title: data.title || "Blog",
+      description: data.content?.substring(0, 150) || "No description available",
+      url: currentUrl,
+      images: [
+        {
+          url: data.thumbnail || "/default-thumbnail.jpg",
+          width: 1200,
+          height: 630,
+          alt: data.title || "Blog Thumbnail",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: data.title || "Blog",
+      description: data.content?.substring(0, 150) || "No description available",
+      images: [data.thumbnail || "/default-thumbnail.jpg"],
+    },
+  };
+}
+
 export default async function Page({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params; // Menunggu Promise params selesai
+  const { id } = await params;
   const data = await getBlogData(id);
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://nuntium-phi.vercel.app";
@@ -28,16 +59,5 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
     linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(currentUrl)}&title=${encodeURIComponent(data.title)}&summary=${encodeURIComponent(data.content?.substring(0, 150) || "")}&source=YourWebsite`,
   };
 
-  return (
-    <>
-      <MetaTags
-        title={data.title || "Blog"}
-        description={data.content?.substring(0, 150) || "No description available"}
-        image={data.thumbnail || "/default-thumbnail.jpg"}
-        url={currentUrl}
-        author={data.author?.name || "Anonymous"}
-      />
-      <BlogPost data={data} currentUrl={currentUrl} shareLinks={shareLinks} />
-    </>
-  );
+  return <BlogPost data={data} currentUrl={currentUrl} shareLinks={shareLinks} />;
 }
