@@ -127,23 +127,6 @@ export default function RegisterForm() {
                 >
                   {isSubmitting ? "Loading" : "Sign Up"}
                 </button>
-              {/* <div className="flex flex-col md:flex-row mt-12 md:items-center">
-                <button
-                  className="text-white py-2 px-2 rounded-md bg-gray-600 disabled:bg-gray-400 disabled:cursor-not-allowed text-sm"
-                  type="submit"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Loading" : "Sign Up"}
-                </button>
-              </div>
-              <div>
-                <p className="text-sm md:ml-6 mt-2 md:mt-0">
-                  Already have an account ?{" "}
-                  <Link href={"/login"} className="text-gray-600 font-bold">
-                    Sign In
-                  </Link>
-                </p>
-              </div> */}
             </Form>
           );
         }}

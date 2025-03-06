@@ -98,7 +98,6 @@ export default function LoginForm() {
                   </div>
                 ) : null}
               </div>
-              {/* <div className="flex flex-col md:flex-row mt-12 md:items-center"> */}
                 <p className="text-sm pt-1">
                   Create new account ?{" "}
                   <Link href={"/register"} className="text-gray-600 font-bold">
@@ -112,7 +111,6 @@ export default function LoginForm() {
                 >
                   {isSubmitting ? "Loading" : "Sign In"}
                 </button>
-              {/* </div> */}
             </Form>
           );
         }}
