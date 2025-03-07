@@ -40,7 +40,7 @@ export default function Home() {
                 </Suspense>
               </div>
             </div>
-            <div className="grid grid-rows-12">
+            <div className="hidden md:block grid grid-rows-12">
               <SidebarCategory />
             </div>
           </div>
