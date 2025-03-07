@@ -7,7 +7,7 @@ interface MainTemplateProps {
 
 export const MainTemplate = ({ children }: MainTemplateProps) => {
   return (
-    <div className="pb-52">
+    <div className="pb-52 bg-white dark:bg-white text-black">
       <header>
       </header>
 

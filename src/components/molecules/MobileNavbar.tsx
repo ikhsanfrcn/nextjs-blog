@@ -40,13 +40,14 @@ export const MobileNavbar: React.FC = () => {
           isOpen ? "block" : "hidden"
         } md:hidden flex flex-col items-center mt-4 space-y-4`}
       >
-        <div className="absolute top-16 left-0 w-full bg-white p-4">
+        <div className="absolute top-16 left-0 w-full p-4 bg-white">
           <div className="flex w-full px-4 gap-5 justify-center">
             <SearchBar />
             <LoginRegister />
           </div>
           <div className="grid pt-5 gap-7 items-start text-xl pt-10">
             <Link href={"/"}>Home</Link>
+            <Link href={"/categories"}>Categories</Link>
             <Link href={"/about"}>About</Link>
           </div>
         </div>

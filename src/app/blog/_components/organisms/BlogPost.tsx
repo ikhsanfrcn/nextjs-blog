@@ -4,6 +4,7 @@ import { ShareButtons } from "../molecules/ShareButtons";
 import { AuthorProfile } from "../atoms/AuthorProfile";
 import { iBlog } from "@/type";
 import Wrapper from "@/components/wrapper";
+import { MainTemplate } from "@/template/MainTemplate";
 
 const formatDate = (date: string | number) => format(new Date(date), "MMMM dd, yyyy");
 
@@ -19,6 +20,7 @@ interface BlogPostProps {
 }
 
 export const BlogPost = ({ data, currentUrl, shareLinks }: BlogPostProps) => (
+  <MainTemplate>
     <Wrapper >
   <div className="flex flex-col">
     {/* IMAGE */}
@@ -47,4 +49,5 @@ export const BlogPost = ({ data, currentUrl, shareLinks }: BlogPostProps) => (
     </div>
   </div>
   </Wrapper>
+  </MainTemplate>
 );

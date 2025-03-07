@@ -24,7 +24,7 @@ export default function Card({
   return (
     <section className="container mx-auto lg:w-[70%]">
       <Link href={`/blog/${objectId}`}>
-        <div className="md:flex">
+        <div className="p-5 md:flex hover:shadow-md hover:scale-105 transition duration-300 ease-in-out ">
           <div
             className="h-48 md:w-70 flex-none bg-cover"
             style={{ backgroundImage: `url(${thumbnail})` }}

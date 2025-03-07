@@ -64,12 +64,12 @@ const Avatar = ({ user }: { user: UserState | null }) => {
         </div>
 
         {isDropdownOpen && (
-          <div className="absolute right-0 mt-2 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 z-10">
-            <div className="px-5 py-2 border-b border-gray-200 dark:border-gray-700">
-              <p className="text-md font-bold text-gray-900 truncate dark:text-white">
+          <div className="absolute right-0 mt-2 bg-white rounded-2xl shadow-lg border border-gray-200">
+            <div className="px-5 py-2 border-b border-gray-200">
+              <p className="text-md font-bold text-gray-900 truncate ">
                 {user?.name}
               </p>
-              <p className="text-sm text-gray-500 truncate dark:text-gray-400">
+              <p className="text-sm text-gray-500 truncate">
                 {user?.email}
               </p>
             </div>
@@ -78,7 +78,7 @@ const Avatar = ({ user }: { user: UserState | null }) => {
                 <Link
                 href={"/dashboard"}
                   className="block
-                text-sm text-gray-700 dark:text-gray-300 hover:text-black"
+                text-sm text-gray-700 hover:text-black"
                 >
                   Dashboard
                 </Link>
@@ -87,7 +87,7 @@ const Avatar = ({ user }: { user: UserState | null }) => {
                 <Link
                 href={`/dashboard/createpost`}
                   className="block
-                text-sm text-gray-700 dark:text-gray-300 hover:text-black cursor-pointer"
+                text-sm text-gray-700 hover:text-black cursor-pointer"
                 >
                   Write a Post
                 </Link>
@@ -95,7 +95,7 @@ const Avatar = ({ user }: { user: UserState | null }) => {
               <li>
                 <button
                   onClick={onLogout}
-                  className="block text-sm text-red-600 dark:text-red-400 cursor-pointer"
+                  className="block text-sm text-red-600 cursor-pointer"
                 >
                   Logout
                 </button>

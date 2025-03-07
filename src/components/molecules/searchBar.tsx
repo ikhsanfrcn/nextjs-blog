@@ -23,7 +23,7 @@ export const SearchBar = () => {
           placeholder="Search"
           value={searchQuery}
           onChange={handleSearchChange}
-          className="bg-white max-sm:w-[10%] h-10 px-5 pr-10 rounded-full text-sm focus:outline-none"
+          className="max-sm:w-[10%] h-10 px-5 pr-10 rounded-full text-sm focus:outline-none"
         />
         <button type="submit" className="absolute right-0 top-0 mt-3 mr-4">
           <svg
