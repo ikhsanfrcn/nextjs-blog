@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "nuntium - News App",
+  title: "Lorem Ipsum - Blog App",
   description: "A publishing company that focuses on the essentials.",
 };
 

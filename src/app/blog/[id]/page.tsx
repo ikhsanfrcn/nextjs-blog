@@ -1,6 +1,8 @@
 import { iBlog } from "@/type";
 import { BlogPost } from "../_components/organisms/BlogPost";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://nextjs-loremipsum.vercel.app";
+
 async function getBlogData(id: string): Promise<iBlog> {
   const res = await fetch(
     `https://gainfulnoise-us.backendless.app/api/data/blogdata/${id}?loadRelations=author`
@@ -17,7 +19,6 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const data = await getBlogData(id);
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://nuntium-phi.vercel.app";
   const currentUrl = `${siteUrl}/blog/${id}`;
 
   return {
@@ -49,7 +50,6 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
   const { id } = await params;
   const data = await getBlogData(id);
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://nuntium-phi.vercel.app";
   const currentUrl = `${siteUrl}/blog/${id}`;
 
   const shareLinks = {
