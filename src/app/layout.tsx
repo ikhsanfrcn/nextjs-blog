@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Lorem Ipsum - Blog App",
-  description: "A publishing company that focuses on the essentials.",
+  description: "Stay updated with the latest trends, tips, and news in the world of technology and innovation.",
 };
 
 export default function RootLayout({

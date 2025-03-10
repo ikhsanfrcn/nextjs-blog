@@ -22,11 +22,11 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const currentUrl = `${siteUrl}/blog/${id}`;
 
   return {
-    title: data.title || "Blog",
-    description: data.content?.substring(0, 150) || "No description available",
+    title: data.title || "Lorem Ipsum - Blog App",
+    description: data.content?.substring(0, 150) || "Stay updated with the latest trends, tips, and news in the world of technology and innovation.",
     openGraph: {
-      title: data.title || "Blog",
-      description: data.content?.substring(0, 150) || "No description available",
+      title: data.title || "Lorem Ipsum - Blog App",
+      description: data.content?.substring(0, 150) || "Stay updated with the latest trends, tips, and news in the world of technology and innovation.",
       url: currentUrl,
       images: [
         {
@@ -39,8 +39,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     },
     twitter: {
       card: "summary_large_image",
-      title: data.title || "Blog",
-      description: data.content?.substring(0, 150) || "No description available",
+      title: data.title || "Lorem Ipsum - Blog App",
+      description: data.content?.substring(0, 150) || "Stay updated with the latest trends, tips, and news in the world of technology and innovation.",
       images: [data.thumbnail || "/default-thumbnail.jpg"],
     },
   };
